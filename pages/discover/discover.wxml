@@ -1,0 +1,72 @@
+<!--pages/discover/discover.wxml-->
+
+<view class='container'>
+
+  <view class='sign'>
+    <view class='sign-text'>
+      <text>签到</text>
+      <text>连续签到7天即可获得惊喜</text>
+    </view>
+    <button class='right'>签到</button>
+  </view>
+
+  <view class='tabs'>
+    <view class='tabs-item' id="tap1" bindtap="pageJump">
+      <image src='images/ic_new_task_d.png'></image>
+      <text>小超福利</text>
+    </view>
+    <view class='tabs-item' id="tap2" bindtap="pageJump">
+      <image src='images/ic_hot_act_d.png'></image>
+      <text>热门活动</text>
+    </view>
+    <view class='tabs-item' id="tap3" bindtap="pageJump">
+      <image src='images/ic_vip.png'></image>
+      <text>私人订制</text>
+    </view>
+    <view class='tabs-item' id="tap4" bindtap="pageJump">
+      <image src='images/ic_zhuanpan.png'></image>
+      <text>幸运转盘</text>
+    </view>
+
+  </view>
+  <view class='tabs'>
+    <view class='tabs-item' id="tap5" bindtap="pageJump">
+      <image src='images/ic_video_d.png'></image>
+      <text>小超视频</text>
+    </view>
+    <view class='tabs-item' id="tap5" bindtap="pageJump">
+      <image src='images/ic_trends_d.png'></image>
+      <text>小超动态</text>
+    </view>
+    <view class='tabs-item' id="tap7" bindtap="pageJump">
+      <image src='images/ic_story_d.png'></image>
+      <text>小超故事</text>
+    </view>
+    <view class='tabs-item' id="tap8" bindtap="pageJump">
+      <image src='images/ic_welfare_d.png'></image>
+      <text>小超公益</text>
+    </view>
+  </view>
+
+  <view class='list-item-bg'>
+    <swiper indicator-dots='true' autoplay='true' interval='4000' duration='1000' circular='true'>
+      <block wx:for='{{bannerData}}'>
+        <navigator url='../webview/webview?url={{item.jumpUrl}}'>
+        <swiper-item>
+          <image class='banner-img' src='{{item.imgUrl}}'></image>
+        </swiper-item>
+        </navigator>
+      </block>
+    </swiper>
+  </view>
+
+  <view class='list-item-bg'>
+    <text>{{videoData.title}}</text>
+ 
+    <text style='margin-top:10px;font-size:12px;'>{{videoData.typeName}}</text>
+
+    <view wx:for='{{videoData.link}}'>
+      <video class='video' poster='{{item.imgUrl}}' src="{{item.videoUrl}}" controls></video>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "热销",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+}
